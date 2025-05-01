@@ -1,4 +1,4 @@
-NAME = premier
+NAME = utile
 SRC = main.cpp Fixed.cpp
 INCLUDE = Fixed.hpp
 OBJDIR = obj
