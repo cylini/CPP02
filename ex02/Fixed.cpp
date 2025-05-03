@@ -2,16 +2,16 @@
 
 Fixed::Fixed() : _fixedPointValue(0) // default constructor
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 Fixed::~Fixed() // destructor
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy) // construit un nouvel objet en copiant un le contenu d'un autre
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 Fixed &Fixed::operator=(const Fixed &copy) // assigne a un objet deja existant le contenu d'un autre
@@ -118,19 +118,35 @@ Fixed Fixed::operator--(int) // postfix decrement
 }
 Fixed &Fixed::min(Fixed &a, Fixed &b) // min function for non-const references
 {
-	return (a < b) ? a : b; // retourne la valeur la plus petite
+	if (a < b)	  // si a est plus petit que b
+		return a; // retourne a
+	else
+		return b; // sinon retourne b
+				  // return (a < b) ? a : b; // retourne la valeur la plus petite
 }
 const Fixed &Fixed::min(const Fixed &a, const Fixed &b) // min function for const references
 {
-	return (a < b) ? a : b; // retourne la valeur la plus petite
+	if (a < b)	  // si a est plus petit que b
+		return a; // retourne a
+	else
+		return b; // sinon retourne b
+				  // return (a < b) ? a : b; // retourne la valeur la plus petite
 }
 Fixed &Fixed::max(Fixed &a, Fixed &b) // max function for non-const references
 {
-	return (a > b) ? a : b; // retourne la valeur la plus grande
+	if (a > b)	  // si a est plus grand que b
+		return a; // retourne a
+	else
+		return b; // sinon retourne b
+				  // return (a > b) ? a : b; // retourne la valeur la plus grande
 }
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b) // max function for const references
 {
-	return (a > b) ? a : b; // retourne la valeur la plus grande
+	if (a > b)	  // si a est plus grand que b
+		return a; // retourne a
+	else
+		return b; // sinon retourne b
+				  // return (a > b) ? a : b; // retourne la valeur la plus grande
 }
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) // overload of the << operator
 {
